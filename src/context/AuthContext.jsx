@@ -1,7 +1,6 @@
 import React from "react";
 
 const AuthContext = ({ children }) => {
-  console.log(children);
   return <div>{children}</div>;
 };
 
