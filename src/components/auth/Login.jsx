@@ -40,7 +40,7 @@ const Login = () => {
             onClick={(e) => {
               submitHandler(e);
             }}
-            className="bg-emerald-600 text-white w-full rounded-full outline-0 py-2 font-bold mt-6 hover:bg-emerald-700"
+            className="w-full bg-emerald-600 text-white rounded-full outline-none py-2 font-bold mt-6 hover:bg-emerald-700 transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
           >
             Log in
           </button>
