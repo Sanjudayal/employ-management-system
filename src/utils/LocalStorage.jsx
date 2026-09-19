@@ -1,8 +1,15 @@
 const employees = [
   {
     id: 1,
+    firstName: "Aarav",
     email: "employee1@company.com",
     password: "123",
+    taskNumbers: {
+      active: 2,
+      newTask: 1,
+      completed: 2,
+      faild: 0,
+    },
     tasks: [
       {
         title: "Design Login Page",
@@ -49,8 +56,15 @@ const employees = [
 
   {
     id: 2,
+    firstName: "Priya",
     email: "employee2@company.com",
     password: "123",
+    taskNumbers: {
+      active: 3,
+      newTask: 1,
+      completed: 2,
+      faild: 0,
+    },
     tasks: [
       {
         title: "Build Dashboard Cards",
@@ -107,8 +121,15 @@ const employees = [
 
   {
     id: 3,
+    firstName: "Rohan",
     email: "employee3@company.com",
     password: "123",
+    taskNumbers: {
+      active: 3,
+      newTask: 1,
+      completed: 3,
+      faild: 0,
+    },
     tasks: [
       {
         title: "Create Employee Form",
@@ -174,8 +195,15 @@ const employees = [
 
   {
     id: 4,
+    firstName: "Ananya",
     email: "employee4@company.com",
     password: "123",
+    taskNumbers: {
+      active: 3,
+      newTask: 1,
+      completed: 1,
+      faild: 0,
+    },
     tasks: [
       {
         title: "Design Landing Page",
@@ -222,8 +250,15 @@ const employees = [
 
   {
     id: 5,
+    firstName: "Vikram",
     email: "employee5@company.com",
     password: "123",
+    taskNumbers: {
+      active: 3,
+      newTask: 1,
+      completed: 4,
+      faild: 0,
+    },
     tasks: [
       {
         title: "Integrate Payment API",
@@ -299,6 +334,7 @@ const employees = [
 const admin = [
   {
     id: 100,
+    firstName: "Sanju",
     email: "admin@company.com",
     password: "123",
   },
