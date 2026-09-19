@@ -20,6 +20,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
+        failed: false,
       },
       {
         title: "Fix Navbar Responsiveness",
@@ -30,6 +31,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Update User Documentation",
@@ -40,6 +42,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
       {
         title: "Test Authentication Flow",
@@ -50,6 +53,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
     ],
   },
@@ -75,6 +79,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
+        failed: false,
       },
       {
         title: "Prepare Monthly Report",
@@ -82,9 +87,10 @@ const employees = [
           "Prepare the monthly performance report for the development team.",
         date: "2026-09-17",
         category: "Reporting",
-        active: true,
+        active: false,
         newTask: false,
         completed: false,
+        failed: true,
       },
       {
         title: "Review API Documentation",
@@ -95,6 +101,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Database Cleanup",
@@ -105,6 +112,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
       {
         title: "Fix Profile Page Bug",
@@ -115,6 +123,18 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
+      },
+      {
+        title: "Prepare Monthly Report",
+        description:
+          "Prepare the monthly performance report for the development team.",
+        date: "2026-09-17",
+        category: "Reporting",
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
       },
     ],
   },
@@ -139,6 +159,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
+        failed: false,
       },
       {
         title: "Implement Form Validation",
@@ -149,6 +170,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Test Employee Search",
@@ -159,6 +181,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Update Employee List",
@@ -169,6 +192,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
       {
         title: "Write Testing Notes",
@@ -179,6 +203,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
       {
         title: "Fix Search Input",
@@ -189,6 +214,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
     ],
   },
@@ -214,6 +240,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
+        failed: false,
       },
       {
         title: "Create Product Banner",
@@ -224,6 +251,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Optimize Images",
@@ -234,6 +262,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Update Brand Assets",
@@ -244,6 +273,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
     ],
   },
@@ -269,6 +299,7 @@ const employees = [
         active: true,
         newTask: true,
         completed: false,
+        failed: false,
       },
       {
         title: "Handle API Errors",
@@ -278,6 +309,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Test Payment Flow",
@@ -288,6 +320,7 @@ const employees = [
         active: true,
         newTask: false,
         completed: false,
+        failed: false,
       },
       {
         title: "Create API Service",
@@ -297,6 +330,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
       {
         title: "Fix Checkout Bug",
@@ -307,6 +341,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
       {
         title: "Update API Documentation",
@@ -316,6 +351,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
       {
         title: "Review Security Settings",
@@ -326,6 +362,7 @@ const employees = [
         active: false,
         newTask: false,
         completed: true,
+        failed: false,
       },
     ],
   },
