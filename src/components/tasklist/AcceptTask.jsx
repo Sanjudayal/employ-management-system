@@ -1,6 +1,6 @@
 import React from "react";
 
-const AcceptTask = () => {
+const AcceptTask = ({ data }) => {
   return (
     <div className="bg-[#00B96B] text-white shrink-0 h-[70%] md:h-full my-auto md:my-0 w-75 rounded-xl p-5 flex flex-col justify-between">
       {/* Main Content Area */}
@@ -10,16 +10,15 @@ const AcceptTask = () => {
           <span className="bg-red-700 text-white text-xs font-bold px-2.5 py-1 rounded">
             High
           </span>
-          <h4 className="text-xs text-white/80 font-medium">18 sep 2028</h4>
+          <h4 className="text-xs text-white/80 font-medium">{data.date}</h4>
         </div>
 
         {/* Task Heading */}
-        <h3 className="font-bold text-xl mb-2">Make a youtube video</h3>
+        <h3 className="font-bold text-xl mb-2">{data.title}</h3>
 
         {/* Task Body Description */}
         <p className="text-sm leading-relaxed text-white/90">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          ullam libero quisquam. Ea, vitae et.
+         {data.description}
         </p>
       </div>
 
