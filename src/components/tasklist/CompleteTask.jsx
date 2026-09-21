@@ -10,7 +10,7 @@ const CompleteTask = ({data}) => {
           </span>
           <h4 className="text-xs font-medium">{data.date}</h4>
         </div>
-        <h3 className="font-bold text-xl mb-2">{data.title}</h3>
+        <h3 className="font-bold text-xl mb-2 text-nowrap">{data.title}</h3>
         <p className="text-sm leading-relaxed opacity-90">
          {data.description}
         </p>
