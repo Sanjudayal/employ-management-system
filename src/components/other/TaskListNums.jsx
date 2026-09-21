@@ -1,6 +1,6 @@
 import React from "react";
 
-const TaskListNums = ({data}) => {
+const TaskListNums = ({ data }) => {
   return (
     <div className="flex justify-center lg:justify-between mt-10 gap-5 max-w-screen flex-wrap lg:flex-nowrap ">
       <div className="bg-[#00ADB5] py-5 px-6 lg:px-10 w-[45%] rounded-xl">
