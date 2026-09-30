@@ -1,27 +1,57 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { authContext } from "../../context/AuthProvider";
 
 const CreateTask = () => {
+  const { employees, updateEmployee } = useContext(authContext);
+
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDate, setTaskDate] = useState("");
   const [assignTo, setAssignTo] = useState("");
   const [taskCategory, setTaskCategory] = useState("");
-  const [taskDiscription, setTaskDiscription] = useState("");
+  const [taskDescription, setTaskDescription] = useState("");
 
-  const [newTask, setNewTask] = useState({});
+  // const [newTask, setNewTask] = useState({});
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(taskTitle, taskDate, assignTo, taskCategory, taskDiscription);
-    setNewTask({
-      taskTitle,
-      taskDate,
-      taskCategory,
-      taskDiscription,
+    console.log(taskTitle, taskDate, assignTo, taskCategory, taskDescription);
+
+    const employee = employees.find(
+      (employee) => employee.firstName === assignTo,
+    );
+
+    if (!employee) {
+      alert("Employee not found");
+      return;
+    }
+
+    const newTask = {
+      title: taskTitle,
+      description: taskDescription,
+      date: taskDate,
+      category: taskCategory,
       newTask: true,
       active: false,
       completed: false,
       failed: false,
-    });
+    };
+
+    const updatedEmployee = {
+      ...employee,
+      tasks: [...employee.tasks, newTask],
+      taskNumbers: {
+        ...employee.taskNumbers,
+        newTask: employee.taskNumbers.newTask + 1,
+      },
+    };
+
+    updateEmployee(updatedEmployee);
+
+    setTaskTitle("");
+    setAssignTo("");
+    setTaskCategory("");
+    setTaskDate("");
+    setTaskDescription("");
   };
 
   return (
@@ -108,9 +138,9 @@ const CreateTask = () => {
               Description
             </label>
             <textarea
-              value={taskDiscription}
+              value={taskDescription}
               onChange={(e) => {
-                setTaskDiscription(e.target.value);
+                setTaskDescription(e.target.value);
               }}
               className="p-2 h-30 md:h-[85%]"
               required

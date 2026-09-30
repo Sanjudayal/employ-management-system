@@ -8,33 +8,50 @@ import { authContext } from "./context/AuthProvider";
 const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
+  const [loggedInUserId, setLoggedInUserId] = useState(null);
 
   const authData = useContext(authContext);
 
-  // useEffect(() => {
-  //   if (authData) {
-  //     const loggedInUser = localStorage.getItem("loggedInUser");
-  //     if (loggedInUser) {
-  //       setUser(loggedInUser.role);
-  //     }
-  //   }
-  // }, [authData]);
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser && authData) {
+      if (!loggedInUser || !authData) return;
+
+      const userData = JSON.parse(loggedInUser);
+      // setUser(userData.role);
+
+      if (userData.role === "employee") {
+        setLoggedInUserId(userData.employeeId);
+      }
+
+      if (userData.role === "admin") {
+        setUser("admin");
+      }
+
+      // setLoggedInUserData(userData.data);
+    }
+  }, [authData]);
 
   useEffect(() => {
-    // localStorage.clear();
-    const loggedInUser = localStorage.getItem("loggedInUser");
-    if (loggedInUser) {
-      const userData = JSON.parse(loggedInUser);
-      setUser(userData.role);
-      setLoggedInUserData(userData.data);
+    if (!authData || !loggedInUserId) return;
+
+    const employee = authData.employees.find(
+      (employee) => employee.id === loggedInUserId,
+    );
+
+    if (employee) {
+      setLoggedInUserData(employee);
+      setUser("employee");
     }
-  }, []);
+  }, [authData, loggedInUserId]);
 
   const handleLogin = (email, password) => {
     if (
       authData.admin.find((e) => email == e.email && password == e.password)
     ) {
       setUser("admin");
+      setLoggedInUserId(null);
+      setLoggedInUserData(null);
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
     } else if (authData) {
       const employee = authData.employees.find(
@@ -43,10 +60,14 @@ const App = () => {
 
       if (employee) {
         setUser("employee");
+        setLoggedInUserId(employee.id);
         setLoggedInUserData(employee);
         localStorage.setItem(
           "loggedInUser",
-          JSON.stringify({ role: "employee", data: employee }),
+          JSON.stringify({
+            role: "employee",
+            employeeId: employee.id,
+          }),
         );
       }
     } else {
@@ -54,11 +75,21 @@ const App = () => {
     }
   };
 
+  const handleLogOut = () => {
+    setUser(null);
+    setLoggedInUserId(null);
+    setLoggedInUserData(null);
+
+    localStorage.removeItem("loggedInUser");
+  };
+
   return (
     <>
       {!user && <Login handleLogin={handleLogin} />}
-      {user === "admin" && <AdminDashboard changeUser={setUser} />}
-      {user === "employee" && <EmployeDashboard changeUser={setUser} data={loggedInUserData} />}
+      {user === "admin" && <AdminDashboard handleLogOut={handleLogOut} />}
+      {user === "employee" && (
+        <EmployeDashboard handleLogOut={handleLogOut} data={loggedInUserData} />
+      )}
     </>
   );
 };

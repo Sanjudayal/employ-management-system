@@ -5,7 +5,7 @@ const employees = [
     email: "employee1@company.com",
     password: "123",
     taskNumbers: {
-      active: 2,
+      active: 1,
       newTask: 1,
       completed: 2,
       faild: 0,
@@ -17,7 +17,7 @@ const employees = [
           "Create a responsive login page design for the new company portal.",
         date: "2026-09-18",
         category: "Design",
-        active: true,
+        active: false,
         newTask: true,
         completed: false,
         failed: false,

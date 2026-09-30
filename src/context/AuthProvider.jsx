@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
   const updateEmployee = (updatedEmployee) => {
     setUserData((prevData) => {
       const updatedEmployees = prevData.employees.map((employee) =>
-        employee.id === updatedEmployee.id ? updateEmployee : employee,
+        employee.id === updatedEmployee.id ? updatedEmployee : employee,
       );
 
       localStorage.setItem("employees", JSON.stringify(updatedEmployees));
