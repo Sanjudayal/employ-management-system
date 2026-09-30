@@ -12,9 +12,23 @@ const AuthProvider = ({ children }) => {
     setUserData({ employees, admin });
   }, []);
 
+  const updateEmployee = (updatedEmployee) => {
+    setUserData((prevData) => {
+      const updatedEmployees = prevData.employees.map((employee) =>
+        employee.id === updatedEmployee.id ? updateEmployee : employee,
+      );
+
+      localStorage.setItem("employees", JSON.stringify(updatedEmployees));
+
+      return { ...prevData, employees: updatedEmployees };
+    });
+  };
+
   return (
     <div>
-      <authContext.Provider value={userData}>{children}</authContext.Provider>
+      <authContext.Provider value={{ ...userData, updateEmployee }}>
+        {children}
+      </authContext.Provider>
     </div>
   );
 };

@@ -7,12 +7,21 @@ const CreateTask = () => {
   const [taskCategory, setTaskCategory] = useState("");
   const [taskDiscription, setTaskDiscription] = useState("");
 
-  const [task, setTask] = useState({});
+  const [newTask, setNewTask] = useState({});
 
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(taskTitle, taskDate, assignTo, taskCategory, taskDiscription);
-    setTask(taskTitle, taskDate,taskCategory,taskDiscription,)
+    setNewTask({
+      taskTitle,
+      taskDate,
+      taskCategory,
+      taskDiscription,
+      newTask: true,
+      active: false,
+      completed: false,
+      failed: false,
+    });
   };
 
   return (
