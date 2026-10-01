@@ -13,10 +13,10 @@ Check out the live application here: **[Employee Management System](https://empl
 |     ![Admin Dashboard](./imgs/admin-dashboard.png)     | ![Employee Dashboard](./imgs/employee-dashboard.png) |
 | _Admin view: Assign tasks and monitor employee stats._ |   _Employee view: Track task status and numbers._    |
 
-|                  Login Page                   |
-| :-------------------------------------------: |
-|     ![Login Page](./imgs/login-page.png)      |
-| _Secure login for both Admins and Employees._ |
+|                    Login Page                    |
+| :----------------------------------------------: |
+| ![Login Page](./imgs/login-with-demo-access.png) |
+|  _Secure login for both Admins and Employees._   |
 
 ## ✨ Features
 
@@ -25,6 +25,7 @@ Check out the live application here: **[Employee Management System](https://empl
 - **Real-time Updates:** Newly assigned tasks instantly appear on the respective employee's dashboard.
 - **Task Tracking:** Employees can view task details, track task numbers, and manage task cards (New, Active, Completed, Failed).
 - **Persistent Data:** Uses Local Storage to simulate a database, ensuring data persists across page refreshes.
+- **Fully Responsive:** fully responsive in all devices
 
 ## 🛠️ Tech Stack
 
