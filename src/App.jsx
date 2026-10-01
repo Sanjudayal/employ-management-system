@@ -83,10 +83,13 @@ const App = () => {
     localStorage.removeItem("loggedInUser");
   };
 
+
   return (
     <>
       {!user && <Login handleLogin={handleLogin} />}
-      {user === "admin" && <AdminDashboard handleLogOut={handleLogOut} />}
+      {user === "admin" && (
+        <AdminDashboard handleLogOut={handleLogOut} />
+      )}
       {user === "employee" && (
         <EmployeDashboard handleLogOut={handleLogOut} data={loggedInUserData} />
       )}

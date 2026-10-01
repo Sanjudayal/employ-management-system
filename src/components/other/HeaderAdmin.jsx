@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = (props) => {
+const HeaderAdmin = (props) => {
   const logOutUser = () => {
     props.handleLogOut();
   };
@@ -9,11 +9,7 @@ const Header = (props) => {
     <div className="flex justify-between items-center">
       <h1 className="leading-tight text-2xl font-normal">
         Hello,
-        <br />{" "}
-        <span className="text-3xl font-semibold">
-          {" "}
-          {props.data.firstName} 👋
-        </span>
+        <br /> <span className="text-3xl font-semibold"> Admin 👋</span>
       </h1>
       <button
         onClick={logOutUser}
@@ -25,4 +21,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default HeaderAdmin;
